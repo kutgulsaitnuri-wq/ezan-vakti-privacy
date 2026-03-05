@@ -46,11 +46,19 @@
             padding-bottom: 6px;
             border-bottom: 1px solid #e0e0e0;
         }
+        h3 { color: #0E6E6E; margin: 16px 0 8px; font-size: 16px; }
         p, li { margin-bottom: 8px; color: #444; }
         ul { padding-left: 24px; }
         .highlight {
             background: #e8f5e9;
             border-left: 4px solid #1B7A5A;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #e65100;
             padding: 12px 16px;
             border-radius: 0 8px 8px 0;
             margin: 16px 0;
@@ -63,6 +71,7 @@
             color: #888;
             font-size: 13px;
         }
+        a { color: #1B7A5A; }
         @media (max-width: 600px) {
             .container { padding: 24px 16px; }
             h1 { font-size: 22px; }
@@ -81,15 +90,15 @@
 
         <h2>1. Toplanan Veriler</h2>
 
-        <h3 style="color:#0E6E6E; margin:16px 0 8px;">1.1 Konum Verisi</h3>
+        <h3>1.1 Konum Verisi</h3>
         <p>Uygulama, namaz vakitlerini ve kible yonunu dogru hesaplayabilmek icin cihazinizin konum bilgisine (GPS) erisim izni talep eder. Konum verisi:</p>
         <ul>
             <li>Yalnizca namaz vakti hesaplama ve kible yonu belirleme amacli kullanilir</li>
             <li>Yalnizca cihazinizda yerel olarak saklanir</li>
-            <li>Hicbir sunucuya veya ucuncu tarafa gonderilmez</li>
+            <li>Tarafimizca hicbir sunucuya gonderilmez</li>
         </ul>
 
-        <h3 style="color:#0E6E6E; margin:16px 0 8px;">1.2 Yerel Depolama</h3>
+        <h3>1.2 Yerel Depolama</h3>
         <p>Uygulama, tercihlerinizi cihazinizda yerel olarak saklar. Bunlar:</p>
         <ul>
             <li>Tema tercihi (karanlik/aydinlik mod)</li>
@@ -100,43 +109,63 @@
             <li>Hesaplama yontemi ve ezan sesi tercihi</li>
         </ul>
         <div class="highlight">
-            Bu veriler yalnizca cihazinizda saklanir ve hicbir dis sunucuya aktarilmaz.
+            Bu veriler yalnizca cihazinizda saklanir ve tarafimizca hicbir dis sunucuya aktarilmaz.
+        </div>
+
+        <h3>1.3 Reklam Verileri</h3>
+        <p>Uygulama, ucretsiz hizmet sunabilmek icin reklamlar icerir. Reklam hizmeti <strong>Google AdMob</strong> tarafindan saglanmaktadir. AdMob, reklamlari kisisellestirmek ve performansini olcmek icin asagidaki verileri toplayabilir:</p>
+        <ul>
+            <li><strong>Reklam Kimligi (Advertising ID)</strong> - Cihaziniza atanmis benzersiz reklam tanimlayicisi</li>
+            <li><strong>Cihaz Bilgileri</strong> - Cihaz modeli, isletim sistemi versiyonu, ekran boyutu</li>
+            <li><strong>IP Adresi</strong> - Yaklasik konum tahmini ve dolandiricilik onleme amacli</li>
+            <li><strong>Uygulama Etkilesim Verileri</strong> - Reklam goruntulenme ve tiklanma bilgileri</li>
+        </ul>
+        <div class="warning">
+            Bu veriler Google AdMob tarafindan toplanir ve islenir. Detayli bilgi icin <a href="https://policies.google.com/privacy" target="_blank">Google Gizlilik Politikasi</a>'ni inceleyebilirsiniz.
         </div>
 
         <h2>2. Ucuncu Taraf Hizmetleri</h2>
-        <p>Uygulama, asagidaki ucuncu taraf API'lerini kullanir:</p>
+        <p>Uygulama, asagidaki ucuncu taraf hizmetlerini kullanir:</p>
         <ul>
+            <li><strong>Google AdMob</strong> - Reklam gosterimi. AdMob kendi gizlilik politikasina tabidir: <a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob & Gizlilik</a></li>
             <li><strong>Aladhan API</strong> - Namaz vakitlerini hesaplamak icin konum koordinatlari (enlem/boylam) gonderilir</li>
             <li><strong>Al-Quran Cloud API</strong> - Kuran ayetlerini getirmek icin sure numarasi gonderilir</li>
         </ul>
-        <p>Bu hizmetlere yalnizca islevsel olarak gerekli olan minimum veri gonderilir. Kisisel bilgi paylasimi yapilmaz.</p>
+        <p>Aladhan ve Al-Quran Cloud API'lerine yalnizca islevsel olarak gerekli olan minimum veri gonderilir.</p>
 
-        <h2>3. Toplanmayan Veriler</h2>
-        <p>Uygulama asagidaki verileri <strong>toplamaz, saklamaz veya paylasmaz</strong>:</p>
+        <h2>3. Reklam Tercihleri</h2>
+        <p>Kisisellestirmis reklamlarla ilgili tercihlerinizi yonetebilirsiniz:</p>
+        <ul>
+            <li><strong>Android:</strong> Ayarlar &gt; Google &gt; Reklamlar bolumunden reklam kimliginizi sifirlayabilir veya kisisellestirmeyi kapatabilirsiniz</li>
+            <li><strong>iOS:</strong> Ayarlar &gt; Gizlilik &gt; Reklam bolumunden reklam takibini sinirlandirabilirsiniz</li>
+        </ul>
+
+        <h2>4. Tarafimizca Toplanmayan Veriler</h2>
+        <p>Uygulama gelistiricisi olarak asagidaki verileri <strong>toplamaz, saklamaz veya paylasmayiz</strong>:</p>
         <ul>
             <li>Kisisel kimlik bilgileri (ad, e-posta, telefon numarasi vb.)</li>
             <li>Hesap veya giris bilgileri</li>
-            <li>Kullanim analitigi veya izleme verileri</li>
-            <li>Reklam kimlikleri</li>
             <li>Finansal veya odeme bilgileri</li>
+            <li>Mesaj, fotograf veya diger medya icerikleri</li>
         </ul>
+        <p>Ancak ucuncu taraf reklam saglayicilari (Google AdMob), kendi gizlilik politikalari cercevesinde yukarida belirtilen reklam verilerini toplayabilir.</p>
 
-        <h2>4. Veri Guvenligi</h2>
-        <p>Tum kullanici tercihleri cihazinizda yerel olarak saklanir. Uygulama herhangi bir kullanici verisi icin sunucu tarafli depolama kullanmaz. API istekleri HTTPS protokolu uzerinden guvenlibir sekilde gerceklestirilir.</p>
+        <h2>5. Veri Guvenligi</h2>
+        <p>Kullanici tercihleri cihazinizda yerel olarak saklanir. Uygulama herhangi bir kullanici verisi icin sunucu tarafli depolama kullanmaz. Tum API istekleri ve reklam baglantilari HTTPS protokolu uzerinden guvenli bir sekilde gerceklestirilir.</p>
 
-        <h2>5. Cocuklarin Gizliligi</h2>
-        <p>Uygulama kisisel veri toplamadigi icin cocuklar dahil tum yas gruplari tarafindan guvenle kullanilabilir. 13 yas altindaki cocuklardan bilerek kisisel bilgi toplanmaz.</p>
+        <h2>6. Cocuklarin Gizliligi</h2>
+        <p>Uygulama tum yas gruplari tarafindan kullanilabilir. 13 yas altindaki cocuklardan bilerek kisisel bilgi toplamayiz. Uygulama icerisinde gosterilen reklamlar, Google AdMob'un cocuklara yonelik reklam politikalarina uygun olarak sunulur.</p>
 
-        <h2>6. Izinler</h2>
+        <h2>7. Izinler</h2>
         <ul>
-            <li><strong>Internet Erisimi</strong> - Namaz vakitleri ve Kuran ayetleri icin API baglantisi</li>
+            <li><strong>Internet Erisimi</strong> - Namaz vakitleri, Kuran ayetleri ve reklam icerikleri icin ag baglantisi</li>
             <li><strong>Konum Erisimi</strong> - Namaz vakti ve kible yonu hesaplamasi (kullanici izni ile)</li>
         </ul>
 
-        <h2>7. Degisiklikler</h2>
+        <h2>8. Degisiklikler</h2>
         <p>Bu gizlilik politikasi zaman zaman guncellenebilir. Degisiklikler bu sayfada yayinlanacaktir. Uygulamayi kullanmaya devam etmeniz, guncellenmis politikayi kabul ettiginiz anlamina gelir.</p>
 
-        <h2>8. Iletisim</h2>
+        <h2>9. Iletisim</h2>
         <p>Gizlilik politikasi hakkinda sorulariniz icin asagidaki adres uzerinden iletisime gecebilirsiniz:</p>
         <p><strong>E-posta:</strong> snur943@gmail.com</p>
 
